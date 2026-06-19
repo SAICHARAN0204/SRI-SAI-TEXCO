@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CheckCircle2, Factory, ArrowRight, MessageCircle, ExternalLink } from 'lucide-react';
 import { partnerMills, companyInfo } from '@/lib/data';
 
@@ -20,13 +21,24 @@ export default function OurMillsPage() {
   return (
     <>
       {/* ── PAGE HERO ─────────────────────────────────────────────────────── */}
-      <section className="page-hero">
-        <div className="container-custom">
+      <section className="page-hero relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/banners/mills_banner_1781880143204.png"
+            alt="Partner Mills SRI SAI TEXCO"
+            fill
+            className="object-cover opacity-40 mix-blend-overlay"
+            priority
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
           <span className="section-label text-gold block mb-3">Mill Partners</span>
-          <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl">
+          <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl drop-shadow-sm">
             The Mills Behind Every Bale
           </h1>
-          <p className="text-teal-pale max-w-xl text-base leading-relaxed">
+          <p className="text-teal-pale max-w-xl text-base leading-relaxed drop-shadow-sm">
             We partner exclusively with CITI-recognised, ISO-compliant spinning mills. Every bale of yarn is traceable to its source mill — no grey market, no secondary stock.
           </p>
         </div>

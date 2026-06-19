@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, MessageCircle, Download, Filter } from 'lucide-react';
 import { yarnCounts, companyInfo } from '@/lib/data';
 
@@ -13,13 +14,24 @@ export default function YarnCataloguePage() {
   return (
     <>
       {/* ── PAGE HERO ──────────────────────────────────────────────────────── */}
-      <section className="page-hero">
-        <div className="container-custom">
+      <section className="page-hero relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/banners/catalogue_banner_1781880175491.png"
+            alt="Yarn Catalogue SRI SAI TEXCO"
+            fill
+            className="object-cover opacity-40 mix-blend-overlay"
+            priority
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
           <span className="section-label text-gold block mb-3">Products</span>
-          <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl">
+          <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl drop-shadow-sm">
             Cotton Yarn Catalogue
           </h1>
-          <p className="text-teal-pale max-w-xl text-base leading-relaxed">
+          <p className="text-teal-pale max-w-xl text-base leading-relaxed drop-shadow-sm">
             We supply a wide range of cotton yarn counts sourced directly from India's leading spinning mills. All counts available in bulk quantities only.
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-8">
@@ -30,7 +42,7 @@ export default function YarnCataloguePage() {
             >
               <Download size={15} /> Download Full Catalogue
             </a>
-            <div className="flex items-center gap-2 text-teal-pale text-sm">
+            <div className="flex items-center gap-2 text-teal-pale text-sm bg-teal-dark/50 px-3 py-1.5 rounded backdrop-blur-sm border border-teal-pale/10">
               <Filter size={14} />
               <span>{yarnCounts.length} yarn counts available</span>
             </div>

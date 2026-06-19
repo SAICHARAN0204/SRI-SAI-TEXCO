@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   TrendingUp, TrendingDown, Minus,
   MessageCircle, Search, Clock, X, ChevronUp, ChevronDown, RefreshCw,
@@ -288,13 +289,26 @@ export default function YarnRatesClient({ entries, lastUpdated }: Props) {
       </div>
 
       {/* ── Page Header ──────────────────────────────────────────────── */}
-      <div className="bg-teal text-white">
-        <div className="container-custom py-10">
+      <div className="page-hero relative overflow-hidden py-16 md:py-24">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/banners/rates_banner_1781880194926.png"
+            alt="Yarn Rates SRI SAI TEXCO"
+            fill
+            className="object-cover opacity-40 mix-blend-overlay"
+            priority
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <p className="section-label text-teal-pale mb-2">Cotton Yarn — Daily Price Board</p>
-              <h1 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-2">Today's Yarn Rates</h1>
-              <p className="text-teal-pale text-sm max-w-xl leading-relaxed">
+              <p className="section-label text-gold block mb-3 drop-shadow-sm">Cotton Yarn — Daily Price Board</p>
+              <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl drop-shadow-sm">
+                Today's Yarn Rates
+              </h1>
+              <p className="text-teal-pale text-base max-w-xl leading-relaxed drop-shadow-sm">
                 Indicative ex-mill prices in Rs. per kg (excl. GST &amp; freight). Updated daily by SRI SAI TEXCO.
                 Contact us to confirm before placing an order.
               </p>

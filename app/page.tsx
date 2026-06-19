@@ -68,208 +68,22 @@ export default function HomePage() {
         <div className="absolute right-0 top-0 w-full h-full pointer-events-none"
              style={{ background: 'radial-gradient(ellipse 60% 80% at 80% 50%, rgba(251,182,22,0.07) 0%, transparent 70%)' }} />
 
-        {/* ── Cotton Plant SVG Illustration ── */}
-        <div className="absolute inset-y-0 right-0 w-[54%] hidden md:block pointer-events-none overflow-hidden">
-          <svg viewBox="0 0 480 480" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-            {/* ════════════════════════════════════════
-                PLANT 2 — Tall background (right edge)
-                Rendered first so it sits "behind"
-            ════════════════════════════════════════ */}
-            <path d="M428 500 C426 420 424 340 425 265 C426 200 430 140 432 80"
-                  stroke="#fbb616" strokeWidth="2" strokeOpacity="0.25" strokeLinecap="round"/>
-            {/* Branch left → Boll P2-A */}
-            <path d="M428 210 C414 198 404 190 390 182"
-                  stroke="#fbb616" strokeWidth="1.5" strokeOpacity="0.22" strokeLinecap="round"/>
-            {/* Leaf */}
-            <path d="M427 300 Q445 286 446 270 Q432 280 427 300Z" fill="#fbb616" fillOpacity="0.12"/>
-            {/* Boll P2-A — medium-small at (388, 178) */}
-            <g transform="translate(388, 178)">
-              <ellipse cx="0" cy="12" rx="4.5" ry="12" fill="#fbb616" fillOpacity="0.22"/>
-              <ellipse cx="0" cy="12" rx="4.5" ry="12" fill="#fbb616" fillOpacity="0.22" transform="rotate(72)"/>
-              <ellipse cx="0" cy="12" rx="4.5" ry="12" fill="#fbb616" fillOpacity="0.22" transform="rotate(144)"/>
-              <ellipse cx="0" cy="12" rx="4.5" ry="12" fill="#fbb616" fillOpacity="0.22" transform="rotate(216)"/>
-              <ellipse cx="0" cy="12" rx="4.5" ry="12" fill="#fbb616" fillOpacity="0.22" transform="rotate(288)"/>
-              <circle cx="0"    cy="-3"  r="10"  fill="#fbb616" fillOpacity="0.32"/>
-              <circle cx="0"    cy="-11" r="7"   fill="#fbb616" fillOpacity="0.26"/>
-              <circle cx="8.7"  cy="-7"  r="6.5" fill="#fbb616" fillOpacity="0.24"/>
-              <circle cx="8.7"  cy="1.5" r="6"   fill="#fbb616" fillOpacity="0.22"/>
-              <circle cx="-8.7" cy="1.5" r="6"   fill="#fbb616" fillOpacity="0.22"/>
-              <circle cx="-8.7" cy="-7"  r="6.5" fill="#fbb616" fillOpacity="0.24"/>
-            </g>
-            {/* Boll P2-B — tiny top at (433, 78) */}
-            <g transform="translate(433, 78)">
-              <ellipse cx="0" cy="8" rx="3" ry="8" fill="#fbb616" fillOpacity="0.20"/>
-              <ellipse cx="0" cy="8" rx="3" ry="8" fill="#fbb616" fillOpacity="0.20" transform="rotate(72)"/>
-              <ellipse cx="0" cy="8" rx="3" ry="8" fill="#fbb616" fillOpacity="0.20" transform="rotate(144)"/>
-              <ellipse cx="0" cy="8" rx="3" ry="8" fill="#fbb616" fillOpacity="0.20" transform="rotate(216)"/>
-              <ellipse cx="0" cy="8" rx="3" ry="8" fill="#fbb616" fillOpacity="0.20" transform="rotate(288)"/>
-              <circle cx="0"    cy="-2"  r="7.5" fill="#fbb616" fillOpacity="0.30"/>
-              <circle cx="0"    cy="-8"  r="5.2" fill="#fbb616" fillOpacity="0.24"/>
-              <circle cx="6.5"  cy="-5"  r="4.8" fill="#fbb616" fillOpacity="0.22"/>
-              <circle cx="6.5"  cy="1"   r="4.5" fill="#fbb616" fillOpacity="0.20"/>
-              <circle cx="-6.5" cy="1"   r="4.5" fill="#fbb616" fillOpacity="0.20"/>
-              <circle cx="-6.5" cy="-5"  r="4.8" fill="#fbb616" fillOpacity="0.22"/>
-            </g>
-
-            {/* ════════════════════════════════════════
-                PLANT 3 — Short (center-right foreground)
-            ════════════════════════════════════════ */}
-            <path d="M185 500 C184 460 182 420 180 382 C178 352 172 325 168 300"
-                  stroke="#fbb616" strokeWidth="1.8" strokeOpacity="0.22" strokeLinecap="round"/>
-            {/* Branch right → Boll P3-A */}
-            <path d="M175 338 C190 325 200 318 215 310"
-                  stroke="#fbb616" strokeWidth="1.4" strokeOpacity="0.20" strokeLinecap="round"/>
-            {/* Branch left → Boll P3-B */}
-            <path d="M173 368 C158 356 148 348 136 342"
-                  stroke="#fbb616" strokeWidth="1.2" strokeOpacity="0.18" strokeLinecap="round"/>
-            {/* Leaf */}
-            <path d="M179 410 Q196 398 198 382 Q184 392 179 410Z" fill="#fbb616" fillOpacity="0.11"/>
-            {/* Boll P3-A — small at (217, 307) */}
-            <g transform="translate(217, 307)">
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.20"/>
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.20" transform="rotate(72)"/>
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.20" transform="rotate(144)"/>
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.20" transform="rotate(216)"/>
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.20" transform="rotate(288)"/>
-              <circle cx="0"    cy="-2"  r="8"   fill="#fbb616" fillOpacity="0.30"/>
-              <circle cx="0"    cy="-9"  r="5.5" fill="#fbb616" fillOpacity="0.24"/>
-              <circle cx="6.9"  cy="-5"  r="5.2" fill="#fbb616" fillOpacity="0.22"/>
-              <circle cx="6.9"  cy="1.5" r="4.8" fill="#fbb616" fillOpacity="0.20"/>
-              <circle cx="-6.9" cy="1.5" r="4.8" fill="#fbb616" fillOpacity="0.20"/>
-              <circle cx="-6.9" cy="-5"  r="5.2" fill="#fbb616" fillOpacity="0.22"/>
-            </g>
-            {/* Boll P3-B — tiny at (133, 338) */}
-            <g transform="translate(133, 338)">
-              <ellipse cx="0" cy="7" rx="2.8" ry="7" fill="#fbb616" fillOpacity="0.18"/>
-              <ellipse cx="0" cy="7" rx="2.8" ry="7" fill="#fbb616" fillOpacity="0.18" transform="rotate(72)"/>
-              <ellipse cx="0" cy="7" rx="2.8" ry="7" fill="#fbb616" fillOpacity="0.18" transform="rotate(144)"/>
-              <ellipse cx="0" cy="7" rx="2.8" ry="7" fill="#fbb616" fillOpacity="0.18" transform="rotate(216)"/>
-              <ellipse cx="0" cy="7" rx="2.8" ry="7" fill="#fbb616" fillOpacity="0.18" transform="rotate(288)"/>
-              <circle cx="0"    cy="-2" r="6.5" fill="#fbb616" fillOpacity="0.26"/>
-              <circle cx="0"    cy="-8" r="4.5" fill="#fbb616" fillOpacity="0.20"/>
-              <circle cx="5.6"  cy="-5" r="4.2" fill="#fbb616" fillOpacity="0.18"/>
-              <circle cx="-5.6" cy="-5" r="4.2" fill="#fbb616" fillOpacity="0.18"/>
-            </g>
-
-            {/* ════════════════════════════════════════
-                MAIN PLANT (original) — rendered on top
-            ════════════════════════════════════════ */}
-            <path d="M240 500 C237 415 226 355 230 294 C233 240 252 196 268 158"
-                  stroke="#fbb616" strokeWidth="3" strokeOpacity="0.42" strokeLinecap="round"/>
-            <path d="M257 216 C298 200 330 188 368 166"
-                  stroke="#fbb616" strokeWidth="2.5" strokeOpacity="0.38" strokeLinecap="round"/>
-            <path d="M243 314 C206 300 178 286 148 268"
-                  stroke="#fbb616" strokeWidth="2" strokeOpacity="0.33" strokeLinecap="round"/>
-            <path d="M237 388 C272 373 300 360 330 343"
-                  stroke="#fbb616" strokeWidth="1.8" strokeOpacity="0.30" strokeLinecap="round"/>
-            <path d="M264 162 C284 148 296 140 312 128"
-                  stroke="#fbb616" strokeWidth="1.5" strokeOpacity="0.30" strokeLinecap="round"/>
-            <path d="M250 265 Q218 247 216 222 Q238 235 250 265Z" fill="#fbb616" fillOpacity="0.17"/>
-            <path d="M244 352 Q274 334 278 310 Q260 329 244 352Z" fill="#fbb616" fillOpacity="0.15"/>
-            <path d="M260 196 Q283 177 280 160 Q268 172 260 196Z" fill="#fbb616" fillOpacity="0.15"/>
-
-            {/* BOLL A — Large */}
-            <g transform="translate(368, 156)">
-              <ellipse cx="0" cy="20" rx="7" ry="20" fill="#fbb616" fillOpacity="0.35"/>
-              <ellipse cx="0" cy="20" rx="7" ry="20" fill="#fbb616" fillOpacity="0.35" transform="rotate(72)"/>
-              <ellipse cx="0" cy="20" rx="7" ry="20" fill="#fbb616" fillOpacity="0.35" transform="rotate(144)"/>
-              <ellipse cx="0" cy="20" rx="7" ry="20" fill="#fbb616" fillOpacity="0.35" transform="rotate(216)"/>
-              <ellipse cx="0" cy="20" rx="7" ry="20" fill="#fbb616" fillOpacity="0.35" transform="rotate(288)"/>
-              <circle cx="0"     cy="-4"  r="17"   fill="#fbb616" fillOpacity="0.58"/>
-              <circle cx="0"     cy="-20" r="12"   fill="#fbb616" fillOpacity="0.50"/>
-              <circle cx="14.7"  cy="-12" r="11.5" fill="#fbb616" fillOpacity="0.47"/>
-              <circle cx="14.7"  cy="4"   r="11"   fill="#fbb616" fillOpacity="0.44"/>
-              <circle cx="-14.7" cy="4"   r="11"   fill="#fbb616" fillOpacity="0.44"/>
-              <circle cx="-14.7" cy="-12" r="11.5" fill="#fbb616" fillOpacity="0.47"/>
-            </g>
-            {/* BOLL B — Medium */}
-            <g transform="translate(148, 262)">
-              <ellipse cx="0" cy="15" rx="5.5" ry="15" fill="#fbb616" fillOpacity="0.30"/>
-              <ellipse cx="0" cy="15" rx="5.5" ry="15" fill="#fbb616" fillOpacity="0.30" transform="rotate(72)"/>
-              <ellipse cx="0" cy="15" rx="5.5" ry="15" fill="#fbb616" fillOpacity="0.30" transform="rotate(144)"/>
-              <ellipse cx="0" cy="15" rx="5.5" ry="15" fill="#fbb616" fillOpacity="0.30" transform="rotate(216)"/>
-              <ellipse cx="0" cy="15" rx="5.5" ry="15" fill="#fbb616" fillOpacity="0.30" transform="rotate(288)"/>
-              <circle cx="0"     cy="-3"  r="13"  fill="#fbb616" fillOpacity="0.52"/>
-              <circle cx="0"     cy="-14" r="9"   fill="#fbb616" fillOpacity="0.44"/>
-              <circle cx="11.3"  cy="-9"  r="8.5" fill="#fbb616" fillOpacity="0.42"/>
-              <circle cx="11.3"  cy="2"   r="8"   fill="#fbb616" fillOpacity="0.39"/>
-              <circle cx="-11.3" cy="2"   r="8"   fill="#fbb616" fillOpacity="0.39"/>
-              <circle cx="-11.3" cy="-9"  r="8.5" fill="#fbb616" fillOpacity="0.42"/>
-            </g>
-            {/* BOLL C — Small */}
-            <g transform="translate(330, 337)">
-              <ellipse cx="0" cy="11" rx="4" ry="11" fill="#fbb616" fillOpacity="0.26"/>
-              <ellipse cx="0" cy="11" rx="4" ry="11" fill="#fbb616" fillOpacity="0.26" transform="rotate(72)"/>
-              <ellipse cx="0" cy="11" rx="4" ry="11" fill="#fbb616" fillOpacity="0.26" transform="rotate(144)"/>
-              <ellipse cx="0" cy="11" rx="4" ry="11" fill="#fbb616" fillOpacity="0.26" transform="rotate(216)"/>
-              <ellipse cx="0" cy="11" rx="4" ry="11" fill="#fbb616" fillOpacity="0.26" transform="rotate(288)"/>
-              <circle cx="0"    cy="-2"  r="9.5" fill="#fbb616" fillOpacity="0.48"/>
-              <circle cx="0"    cy="-10" r="6.5" fill="#fbb616" fillOpacity="0.40"/>
-              <circle cx="8.2"  cy="-6"  r="6.2" fill="#fbb616" fillOpacity="0.37"/>
-              <circle cx="8.2"  cy="2"   r="5.8" fill="#fbb616" fillOpacity="0.34"/>
-              <circle cx="-8.2" cy="2"   r="5.8" fill="#fbb616" fillOpacity="0.34"/>
-              <circle cx="-8.2" cy="-6"  r="6.2" fill="#fbb616" fillOpacity="0.37"/>
-            </g>
-            {/* BOLL D — Tiny top */}
-            <g transform="translate(312, 126)">
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.27"/>
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.27" transform="rotate(72)"/>
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.27" transform="rotate(144)"/>
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.27" transform="rotate(216)"/>
-              <ellipse cx="0" cy="9" rx="3.5" ry="9" fill="#fbb616" fillOpacity="0.27" transform="rotate(288)"/>
-              <circle cx="0"    cy="-2"  r="8.5" fill="#fbb616" fillOpacity="0.46"/>
-              <circle cx="0"    cy="-10" r="6"   fill="#fbb616" fillOpacity="0.38"/>
-              <circle cx="7.4"  cy="-6"  r="5.5" fill="#fbb616" fillOpacity="0.35"/>
-              <circle cx="7.4"  cy="1.5" r="5.2" fill="#fbb616" fillOpacity="0.32"/>
-              <circle cx="-7.4" cy="1.5" r="5.2" fill="#fbb616" fillOpacity="0.32"/>
-              <circle cx="-7.4" cy="-6"  r="5.5" fill="#fbb616" fillOpacity="0.35"/>
-            </g>
-
-
-            {/* ── Floating accent dots ── */}
-
-
-
-            <circle cx="432" cy="68"  r="4.5" fill="#fbb616" fillOpacity="0.20"/>
-            <circle cx="408" cy="94"  r="2.5" fill="#fbb616" fillOpacity="0.16"/>
-            <circle cx="94"  cy="180" r="3"   fill="#fbb616" fillOpacity="0.16"/>
-            <circle cx="60"  cy="350" r="2.5" fill="#fbb616" fillOpacity="0.13"/>
-            <circle cx="470" cy="200" r="3"   fill="#fbb616" fillOpacity="0.14"/>
-          </svg>
-        </div>
-
-        {/* ── Yarn Cone Image ── */}
-        {/* Main cone — center */}
-        <div className="absolute bottom-4 right-[48%] hidden xl:block pointer-events-none" style={{transform: 'translateX(50%)', zIndex: 10}}>
-          <img
-            src="/yarn-cone-transparent.png"
-            alt="Yarn Cone"
-            width={110}
-            height={130}
-            style={{ opacity: 0.85 }}
-            className="drop-shadow-sm"
-          />
-        </div>
-        {/* Second cone — right, smaller, slightly offset */}
-        <div className="absolute bottom-8 right-[28%] hidden lg:block pointer-events-none" style={{zIndex: 5}}>
-          <img
-            src="/yarn-cone-transparent.png"
-            alt="Yarn Cone"
-            width={72}
-            height={86}
-            style={{ opacity: 0.65, transform: 'rotate(-12deg)' }}
-          />
-        </div>
-        {/* Third cone — left of main, leaning */}
-        <div className="absolute bottom-6 right-[38%] hidden lg:block pointer-events-none" style={{zIndex: 5}}>
-          <img
-            src="/yarn-cone-transparent.png"
-            alt="Yarn Cone"
-            width={80}
-            height={95}
-            style={{ opacity: 0.70, transform: 'rotate(15deg)' }}
-          />
+        {/* ── Realistic Cotton Bolls Image ── */}
+        <div className="absolute inset-y-0 right-0 w-[55%] hidden md:block pointer-events-none">
+          <div className="relative w-full h-full">
+            <Image
+              src="/realistic_cotton_bolls.png"
+              alt="Premium Raw Cotton Bolls"
+              fill
+              className="object-cover object-left lg:object-center mix-blend-lighten opacity-90"
+              priority
+            />
+            {/* Gradient masks to blend the edges smoothly into the dark teal background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-teal-dark via-transparent to-transparent" />
+            <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-teal-dark to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-teal-dark to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-teal-dark to-transparent" />
+          </div>
         </div>
 
         {/* ── Text Content ── */}

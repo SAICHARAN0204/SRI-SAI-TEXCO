@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle2, Heart, Target, Users, ShieldCheck, Handshake, TrendingUp, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -32,13 +33,24 @@ export default function AboutPage() {
   return (
     <>
       {/* ── PAGE HERO ─────────────────────────────────────────────────────── */}
-      <section className="page-hero">
-        <div className="container-custom">
+      <section className="page-hero relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/banners/about_banner_1781880079512.png"
+            alt="About SRI SAI TEXCO"
+            fill
+            className="object-cover opacity-40 mix-blend-overlay"
+            priority
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
           <span className="section-label text-gold block mb-3">About Us</span>
-          <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl">
+          <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl drop-shadow-sm">
             Built on Trust, Driven by Textile Expertise
           </h1>
-          <p className="text-teal-pale max-w-xl text-base leading-relaxed">
+          <p className="text-teal-pale max-w-xl text-base leading-relaxed drop-shadow-sm">
             SRI SAI TEXCO is a Coimbatore-based cotton yarn agency with over 15 years of experience in the Indian textile supply chain. We connect spinning mills with bulk buyers — reliably, transparently, and fast.
           </p>
         </div>

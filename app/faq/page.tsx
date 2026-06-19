@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronDown, MessageCircle, ArrowRight } from 'lucide-react';
 import { faqs, companyInfo } from '@/lib/data';
 
@@ -15,13 +16,24 @@ export default function FAQPage() {
   return (
     <>
       {/* ── PAGE HERO ─────────────────────────────────────────────────────── */}
-      <section className="page-hero">
-        <div className="container-custom">
+      <section className="page-hero relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/banners/faq_banner_1781880105035.png"
+            alt="FAQ SRI SAI TEXCO"
+            fill
+            className="object-cover opacity-40 mix-blend-overlay"
+            priority
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
           <span className="section-label text-gold block mb-3">FAQ</span>
-          <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl">
+          <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl drop-shadow-sm">
             Frequently Asked Questions
           </h1>
-          <p className="text-teal-pale max-w-xl text-base leading-relaxed">
+          <p className="text-teal-pale max-w-xl text-base leading-relaxed drop-shadow-sm">
             Common questions from bulk buyers about our yarn supply, ordering process, mills, and logistics.
           </p>
         </div>
