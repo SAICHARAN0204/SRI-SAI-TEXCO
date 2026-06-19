@@ -40,7 +40,7 @@ export default function AboutPage() {
             src="/banners/about_banner_1781880079512.png"
             alt="About SRI SAI TEXCO"
             fill
-            className="object-cover opacity-40 mix-blend-overlay"
+            className="object-cover object-[center_30%] md:object-[center_25%] opacity-40 mix-blend-overlay"
             priority
           />
         </div>

@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   TrendingUp, TrendingDown, Minus,
   MessageCircle, Search, Clock, X, ChevronUp, ChevronDown, RefreshCw,
@@ -258,6 +257,30 @@ export default function YarnRatesClient({ entries, lastUpdated }: Props) {
     });
   }, [entries, mill, cat, avail, q, sortKey, sortDir]);
 
+  // Interleave entries by mill for the marquee so it doesn't just show one mill for a long time
+  const marqueeEntries = useMemo(() => {
+    const byMill: Record<string, PriceEntry[]> = {};
+    entries.forEach(e => {
+      if (!byMill[e.mill]) byMill[e.mill] = [];
+      byMill[e.mill].push(e);
+    });
+    const millKeys = Object.keys(byMill);
+    const result: PriceEntry[] = [];
+    let i = 0;
+    while (true) {
+      let added = false;
+      for (const m of millKeys) {
+        if (i < byMill[m].length) {
+          result.push(byMill[m][i]);
+          added = true;
+        }
+      }
+      if (!added) break;
+      i++;
+    }
+    return result;
+  }, [entries]);
+
   const up = entries.filter(e => getPriceChange(e).direction === 'up').length;
   const down = entries.filter(e => getPriceChange(e).direction === 'down').length;
   const flat = entries.filter(e => getPriceChange(e).direction === 'flat').length;
@@ -271,7 +294,7 @@ export default function YarnRatesClient({ entries, lastUpdated }: Props) {
           <div className="shrink-0 bg-gold text-teal-dark text-xs font-bold px-3 py-1 mr-4 font-mono tracking-widest">LIVE</div>
           <div className="overflow-hidden flex-1">
             <div className="flex gap-10 animate-marquee whitespace-nowrap">
-              {[...entries, ...entries].map((e, i) => {
+              {[...marqueeEntries, ...marqueeEntries].map((e, i) => {
                 const ch = getPriceChange(e);
                 return (
                   <span key={i} className="inline-flex items-center gap-2 text-xs font-mono">
@@ -289,26 +312,13 @@ export default function YarnRatesClient({ entries, lastUpdated }: Props) {
       </div>
 
       {/* ── Page Header ──────────────────────────────────────────────── */}
-      <div className="page-hero relative overflow-hidden py-16 md:py-24">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/banners/rates_banner_1781880194926.png"
-            alt="Yarn Rates SRI SAI TEXCO"
-            fill
-            className="object-cover opacity-40 mix-blend-overlay"
-            priority
-          />
-        </div>
-
-        <div className="container-custom relative z-10">
+      <div className="bg-teal text-white">
+        <div className="container-custom py-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <p className="section-label text-gold block mb-3 drop-shadow-sm">Cotton Yarn — Daily Price Board</p>
-              <h1 className="font-playfair text-4xl md:text-5xl font-black text-white mb-4 max-w-2xl drop-shadow-sm">
-                Today's Yarn Rates
-              </h1>
-              <p className="text-teal-pale text-base max-w-xl leading-relaxed drop-shadow-sm">
+              <p className="section-label text-teal-pale mb-2">Cotton Yarn — Daily Price Board</p>
+              <h1 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-2">Today's Yarn Rates</h1>
+              <p className="text-teal-pale text-sm max-w-xl leading-relaxed">
                 Indicative ex-mill prices in Rs. per kg (excl. GST &amp; freight). Updated daily by SRI SAI TEXCO.
                 Contact us to confirm before placing an order.
               </p>
