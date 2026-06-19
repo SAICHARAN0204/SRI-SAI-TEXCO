@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Heart, Target, Users, ShieldCheck, Handshake, TrendingUp } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Heart, Target, Users, ShieldCheck, Handshake, TrendingUp, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us — SRI SAI TEXCO Cotton Yarn Agent',
@@ -157,6 +157,83 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── CERTIFICATIONS ────────────────────────────────────────────────────── */}
+      <section className="bg-cream py-14">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <span className="section-label block mb-3">Sustainability</span>
+            <h2 className="section-heading mb-4">Our Certifications</h2>
+            <p className="text-txt-light max-w-lg mx-auto text-sm leading-relaxed">
+              We are certified under two of the world's most recognised cotton sustainability frameworks — ensuring every bale we supply meets verified environmental and ethical standards.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+
+            {/* USCTP */}
+            <div className="card p-8 flex flex-col border-2 border-teal/20">
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-14 h-14 bg-teal-pale rounded-xl flex items-center justify-center shrink-0">
+                  <ShieldCheck size={26} className="text-teal" />
+                </div>
+                <div>
+                  <span className="font-mono text-[10px] text-teal font-bold tracking-[0.2em] uppercase bg-teal-pale px-2.5 py-1 rounded-full">
+                    Certified
+                  </span>
+                  <h3 className="font-playfair text-xl font-black text-txt-dark mt-2 mb-0.5">USCTP</h3>
+                  <p className="text-xs font-semibold text-teal">U.S. Cotton Trust Protocol</p>
+                </div>
+              </div>
+              <p className="text-sm text-txt-light leading-relaxed mb-4">
+                The U.S. Cotton Trust Protocol is a data-driven, science-based certification that validates responsible production across key environmental metrics — water consumption, soil carbon, soil loss, land use efficiency, energy use, and greenhouse gas emissions.
+              </p>
+              <ul className="space-y-2 mt-auto">
+                {['Verified water & soil health standards', 'Reduced greenhouse gas emissions', 'Traceable from U.S. farm to mill'].map(pt => (
+                  <li key={pt} className="flex items-center gap-2 text-xs text-txt-mid">
+                    <CheckCircle2 size={13} className="text-teal shrink-0" />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* BCI */}
+            <div className="card p-8 flex flex-col border-2 border-gold/20">
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-14 h-14 bg-gold-pale rounded-xl flex items-center justify-center shrink-0">
+                  <Award size={26} className="text-gold-dark" />
+                </div>
+                <div>
+                  <span className="font-mono text-[10px] text-gold-dark font-bold tracking-[0.2em] uppercase bg-gold-pale px-2.5 py-1 rounded-full">
+                    Certified
+                  </span>
+                  <h3 className="font-playfair text-xl font-black text-txt-dark mt-2 mb-0.5">BCI</h3>
+                  <p className="text-xs font-semibold text-gold-dark">Better Cotton Initiative</p>
+                </div>
+              </div>
+              <p className="text-sm text-txt-light leading-relaxed mb-4">
+                Better Cotton is the world's largest cotton sustainability programme. BCI exists to make global cotton production better for the people who produce it, better for the environment it grows in, and better for the sector's future.
+              </p>
+              <ul className="space-y-2 mt-auto">
+                {['Ethical farming & fair labour practices', 'Reduced pesticide & water usage', 'Supported by global textile brands'].map(pt => (
+                  <li key={pt} className="flex items-center gap-2 text-xs text-txt-mid">
+                    <CheckCircle2 size={13} className="text-gold-dark shrink-0" />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          <p className="text-center text-xs text-txt-light mt-8">
+            These certifications apply to select counts in our catalogue.{' '}
+            <Link href="/contact" className="text-teal underline hover:text-teal-dark">Contact us</Link>
+            {' '}to request certified yarn with documentation.
+          </p>
         </div>
       </section>
     </>

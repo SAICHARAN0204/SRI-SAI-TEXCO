@@ -592,6 +592,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── CERTIFICATIONS ──────────────────────────────────────────────────── */}
+      <section className="bg-white py-14 md:py-16">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <span className="section-label block mb-3">Sustainability</span>
+            <h2 className="section-heading mb-4">Our Certifications</h2>
+            <p className="text-txt-light max-w-lg mx-auto text-sm leading-relaxed">
+              SRI SAI TEXCO holds two internationally recognised sustainability certifications — proof that our cotton is responsibly sourced and traceable from farm to mill.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+
+            {/* USCTP */}
+            <div className="card p-7 flex flex-col items-center text-center border-2 border-teal/20 hover:border-teal/40 transition-all">
+              <div className="w-16 h-16 bg-teal-pale rounded-full flex items-center justify-center mb-4">
+                <ShieldCheck size={30} className="text-teal" />
+              </div>
+              <span className="font-mono text-[10px] text-teal font-bold tracking-[0.2em] uppercase bg-teal-pale px-3 py-1 rounded-full mb-4">
+                Certified
+              </span>
+              <h3 className="font-playfair text-2xl font-black text-txt-dark mb-1">USCTP</h3>
+              <p className="text-xs font-semibold text-teal mb-4 tracking-wide">U.S. Cotton Trust Protocol</p>
+              <p className="text-sm text-txt-light leading-relaxed">
+                Data-driven certification verifying U.S.-grown cotton meets rigorous standards for water use, soil health, energy efficiency, and greenhouse gas emissions.
+              </p>
+            </div>
+
+            {/* BCI */}
+            <div className="card p-7 flex flex-col items-center text-center border-2 border-gold/20 hover:border-gold/40 transition-all">
+              <div className="w-16 h-16 bg-gold-pale rounded-full flex items-center justify-center mb-4">
+                <ShieldCheck size={30} className="text-gold-dark" />
+              </div>
+              <span className="font-mono text-[10px] text-gold-dark font-bold tracking-[0.2em] uppercase bg-gold-pale px-3 py-1 rounded-full mb-4">
+                Certified
+              </span>
+              <h3 className="font-playfair text-2xl font-black text-txt-dark mb-1">BCI</h3>
+              <p className="text-xs font-semibold text-gold-dark mb-4 tracking-wide">Better Cotton Initiative</p>
+              <p className="text-sm text-txt-light leading-relaxed">
+                World's largest cotton sustainability programme — improving farming practices for the benefit of farmers, the environment, and the global textile sector.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── DOWNLOAD CATALOGUE CTA ──────────────────────────────────────────── */}
       <section className="bg-gold-pale border-y border-gold/20 py-14">
         <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-6">

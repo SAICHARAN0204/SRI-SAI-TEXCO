@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, MessageCircle, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Clock, ShieldCheck } from 'lucide-react';
 import { companyInfo } from '@/lib/data';
 
 const quickLinks = [
@@ -54,7 +54,15 @@ export default function Footer() {
             <p className="text-sm text-teal-pale leading-relaxed mb-4">
               A trusted cotton yarn agency based in Coimbatore, sourcing from India's leading spinning mills and supplying bulk across Tamil Nadu, Gujarat, and Maharashtra.
             </p>
-            <p className="text-xs text-teal-muted">GST Registered · Pan-India Supply</p>
+            <p className="text-xs text-teal-muted mb-3">GST Registered · Pan-India Supply</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-wider bg-teal/20 text-teal-pale border border-teal/30 px-2.5 py-1.5 rounded-full">
+                <ShieldCheck size={11} /> USCTP Certified
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-wider bg-gold/15 text-gold border border-gold/30 px-2.5 py-1.5 rounded-full">
+                <ShieldCheck size={11} /> BCI Certified
+              </span>
+            </div>
           </div>
 
           {/* Column 2: Quick Links */}
